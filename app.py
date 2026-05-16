@@ -96,15 +96,15 @@ if page == "🏠 Executive Overview":
         st.markdown('</div>', unsafe_allow_html=True)
 
 elif page == "📦 Product Analytics":
-    from pages.product_analytics import show_product_analytics
+    from src.ui.product_analytics import show_product_analytics
     show_product_analytics(df)
 
 elif page == "👥 Customer Insights":
-    from pages.customer_analytics import show_customer_analytics
+    from src.ui.customer_analytics import show_customer_analytics
     show_customer_analytics(df)
 
 elif page == "📈 Sales Forecasting":
-    from pages.forecasting import show_forecasting
+    from src.ui.forecasting import show_forecasting
     show_forecasting(df)
 
 elif page == "🤖 Ask AI":
