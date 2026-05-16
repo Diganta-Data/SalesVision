@@ -1,4 +1,4 @@
-# SalesVision – AI-Powered Retail Sales Analytics Platform
+# SalesVision Enterprise – AI-Powered Retail Sales Analytics Platform
 
 SalesVision is a professional-grade retail analytics platform built with Streamlit and Python. It provides businesses with actionable insights into their sales performance, customer behavior, and future demand through advanced data visualization and machine learning models.
 
