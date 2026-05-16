@@ -1,6 +1,6 @@
 import streamlit as st
 import plotly.express as px
-from models import AnalyticsModels
+from src.models import AnalyticsModels
 
 def show_customer_analytics(df):
     st.title("Customer Insights & Segmentation")

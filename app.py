@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
-from data_manager import DataManager
+from src.data_manager import DataManager
 
 # Page Configuration
 st.set_page_config(
@@ -16,8 +16,8 @@ def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-if os.path.exists('src/styles.css'):
-    local_css('src/styles.css')
+if os.path.exists('assets/style.css'):
+    local_css('assets/style.css')
 
 # Initialize Data
 dm = DataManager()

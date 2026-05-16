@@ -1,16 +1,49 @@
-# Byte-compiled / optimized / DLL files
+# --- Python Standard ---
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Database
-data/*.db
-
-# Environments
-.venv/
+# --- Virtual Environments ---
+.env
+.venv
 env/
 venv/
-.env
+ENV/
 
-# Streamlit
+# --- IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Data & DB ---
+data/*.db
+data/*.sqlite
+data/*.csv
+!data/.gitkeep
+
+# --- Project Specific ---
 .streamlit/
+assets/*.log
+outputs/
+
+# --- OS ---
+.DS_Store
+Thumbs.db

@@ -1,6 +1,6 @@
 import streamlit as st
 import plotly.graph_objects as go
-from models import AnalyticsModels
+from src.models import AnalyticsModels
 import pandas as pd
 
 def show_forecasting(df):
