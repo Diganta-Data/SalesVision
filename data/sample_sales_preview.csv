@@ -1,0 +1,21 @@
+Order_ID,Order_Date,Customer_ID,Segment,Region,Category,Sub_Category,Sales,Quantity,Discount,Profit
+CA-2024-10000,2022-04-13,CU-221,Home Office,East,Furniture,Bookcases,368.68,8,0.0,73.45
+CA-2024-10001,2023-01-08,CU-393,Corporate,West,Technology,Accessories,45.17,5,0.4,2.62
+CA-2024-10002,2022-06-10,CU-269,Home Office,East,Office Supplies,Appliances,221.65,7,0.0,40.16
+CA-2024-10003,2022-09-01,CU-266,Corporate,West,Furniture,Bookcases,345.1,9,0.2,-2.54
+CA-2024-10004,2022-11-12,CU-439,Home Office,West,Office Supplies,Art,178.97,7,0.1,4.37
+CA-2024-10005,2023-03-04,CU-149,Corporate,South,Furniture,Furnishings,24.17,4,0.1,2.36
+CA-2024-10006,2024-04-01,CU-545,Corporate,West,Furniture,Bookcases,253.63,9,0.4,21.53
+CA-2024-10007,2023-12-03,CU-509,Consumer,West,Furniture,Furnishings,300.95,9,0.2,47.3
+CA-2024-10008,2022-06-06,CU-228,Home Office,East,Technology,Phones,74.45,3,0.2,4.16
+CA-2024-10009,2023-08-16,CU-140,Home Office,North,Technology,Machines,775.84,8,0.0,218.46
+CA-2024-10010,2024-02-19,CU-392,Home Office,West,Office Supplies,Storage,32.91,8,0.2,3.86
+CA-2024-10011,2023-12-27,CU-230,Consumer,Central,Technology,Machines,482.77,7,0.0,141.42
+CA-2024-10012,2024-02-06,CU-479,Consumer,East,Office Supplies,Paper,212.91,7,0.2,-4.74
+CA-2024-10013,2022-08-29,CU-336,Home Office,East,Furniture,Furnishings,350.8,4,0.0,39.4
+CA-2024-10014,2023-06-09,CU-144,Corporate,North,Technology,Machines,420.53,5,0.4,34.66
+CA-2024-10015,2023-10-08,CU-330,Corporate,North,Office Supplies,Paper,135.14,1,0.2,23.52
+CA-2024-10016,2023-01-12,CU-458,Corporate,East,Technology,Accessories,20.51,9,0.0,5.44
+CA-2024-10017,2022-11-14,CU-414,Corporate,North,Furniture,Chairs,41.24,4,0.4,-3.67
+CA-2024-10018,2022-04-23,CU-485,Home Office,North,Office Supplies,Storage,80.65,5,0.4,-7.02
+CA-2024-10019,2023-09-17,CU-442,Consumer,North,Furniture,Bookcases,277.82,1,0.1,28.55

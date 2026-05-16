@@ -37,6 +37,7 @@ ENV/
 data/*.db
 data/*.sqlite
 data/*.csv
+!data/sample_sales_preview.csv
 !data/.gitkeep
 
 # --- Project Specific ---
