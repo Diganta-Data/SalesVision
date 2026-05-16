@@ -4,13 +4,16 @@ from src.models import AnalyticsModels
 import pandas as pd
 
 def show_forecasting(df):
-    st.title("AI-Powered Sales Forecasting")
+    st.title("Predictive Demand Forecasting")
+    st.markdown("AI-driven projections for future sales cycles.")
     st.markdown("---")
     
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
     forecast_days = st.slider("Select Forecast Horizon (Days)", min_value=7, max_value=90, value=30)
+    st.markdown('</div>', unsafe_allow_html=True)
     
-    if st.button("Generate Forecast"):
-        with st.spinner(f"Predicting sales for the next {forecast_days} days..."):
+    if st.button("Initialize Forecast Model"):
+        with st.spinner(f"Computing demand for the next {forecast_days} days..."):
             forecast = AnalyticsModels.forecast_sales(df, periods=forecast_days)
             
             # Historical Data for Plotting
@@ -26,14 +29,14 @@ def show_forecasting(df):
             
             # Forecast
             fig.add_trace(go.Scatter(x=forecast['ds'], y=forecast['yhat'], 
-                                    name='Predicted Sales', line=dict(color='#6366f1', width=3)))
+                                    name='Predicted Sales', line=dict(color='#818cf8', width=3)))
             
             # Confidence Interval
             fig.add_trace(go.Scatter(
                 x=pd.concat([forecast['ds'], forecast['ds'][::-1]]),
                 y=pd.concat([forecast['yhat_upper'], forecast['yhat_lower'][::-1]]),
                 fill='toself',
-                fillcolor='rgba(99, 102, 241, 0.2)',
+                fillcolor='rgba(129, 140, 248, 0.2)',
                 line=dict(color='rgba(255,255,255,0)'),
                 hoverinfo="skip",
                 showlegend=False,
@@ -43,13 +46,15 @@ def show_forecasting(df):
             fig.update_layout(
                 template='plotly_dark',
                 xaxis_title="Date",
-                yaxis_title="Sales ($)",
+                yaxis_title="Revenue ($)",
                 legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
                 plot_bgcolor='rgba(0,0,0,0)',
                 paper_bgcolor='rgba(0,0,0,0)'
             )
             
+            st.markdown('<div class="glass-card">', unsafe_allow_html=True)
             st.plotly_chart(fig, use_container_width=True)
+            st.markdown('</div>', unsafe_allow_html=True)
             
             # Forecast KPIs
             total_forecasted = forecast.tail(forecast_days)['yhat'].sum()
@@ -57,11 +62,11 @@ def show_forecasting(df):
             
             c1, c2 = st.columns(2)
             with c1:
-                st.metric("Total Forecasted Revenue", f"${total_forecasted:,.2f}")
+                st.metric("Forecasted Gross Revenue", f"${total_forecasted:,.2f}")
             with c2:
-                st.metric("Average Daily Sales (Predicted)", f"${avg_daily_forecast:,.2f}")
+                st.metric("Avg Daily Predicted Sales", f"${avg_daily_forecast:,.2f}")
                 
-            st.markdown("### Forecast Data")
+            st.markdown("### Projection Dataset")
             st.dataframe(forecast.tail(forecast_days), use_container_width=True)
     else:
-        st.info("Click the button above to run the forecasting model.")
+        st.info("Execute the model to generate demand projections.")
