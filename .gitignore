@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Database
+data/*.db
+
+# Environments
+.venv/
+env/
+venv/
+.env
+
+# Streamlit
+.streamlit/
