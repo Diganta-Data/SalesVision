@@ -20,9 +20,13 @@ if os.path.exists('assets/style.css'):
     local_css('assets/style.css')
 
 # Initialize Data
-dm = DataManager()
-dm.initialize_db()
-df = dm.load_data()
+@st.cache_data
+def get_cached_data():
+    dm = DataManager()
+    dm.initialize_db()
+    return dm.load_data()
+
+df = get_cached_data()
 
 # Sidebar Navigation
 st.sidebar.title("🚀 SalesVision")
@@ -68,21 +72,28 @@ if page == "🏠 Executive Overview":
     c1, c2 = st.columns([2, 1])
     
     with c1:
-        st.subheader("Sales Trend (Monthly)")
+        st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+        st.subheader("📊 Sales Trend (Monthly)")
         df['Month'] = df['Order_Date'].dt.to_period('M').astype(str)
         monthly_sales = df.groupby('Month')['Sales'].sum().reset_index()
         fig_trend = px.line(monthly_sales, x='Month', y='Sales', template='plotly_dark',
-                           color_discrete_sequence=['#6366f1'])
-        fig_trend.update_layout(plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
+                           color_discrete_sequence=['#818cf8'])
+        fig_trend.update_layout(plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)', 
+                                margin=dict(l=0, r=0, t=30, b=0))
         st.plotly_chart(fig_trend, use_container_width=True)
+        st.markdown('</div>', unsafe_allow_html=True)
         
     with c2:
-        st.subheader("Sales by Region")
+        st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+        st.subheader("🌎 Sales by Region")
         region_sales = df.groupby('Region')['Sales'].sum().reset_index()
-        fig_pie = px.pie(region_sales, values='Sales', names='Region', hole=0.4,
-                        template='plotly_dark', color_discrete_sequence=px.colors.sequential.Indigo)
-        fig_pie.update_layout(plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
+        # FIX: Changed sequential color name to a valid one (ice)
+        fig_pie = px.pie(region_sales, values='Sales', names='Region', hole=0.5,
+                        template='plotly_dark', color_discrete_sequence=px.colors.sequential.ice)
+        fig_pie.update_layout(plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)',
+                             margin=dict(l=0, r=0, t=30, b=0))
         st.plotly_chart(fig_pie, use_container_width=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
 elif page == "📦 Product Analytics":
     from pages.product_analytics import show_product_analytics
