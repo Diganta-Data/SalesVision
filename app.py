@@ -113,7 +113,7 @@ else:
 st.sidebar.markdown('<p class="sidebar-title">PLATFORM NAVIGATION</p>', unsafe_allow_html=True)
 page = st.sidebar.selectbox(
     "Menu Options",
-    ["Executive Overview", "Product Analytics", "Customer Insights", "Sales Forecasting", "Business Query Engine"],
+    ["Executive Overview", "Product Analytics", "Customer Insights", "Sales Forecasting", "AI Assistant"],
     label_visibility="collapsed"
 )
 
@@ -248,7 +248,7 @@ else:
         from src.ui.forecasting import show_forecasting
         show_forecasting(df)
 
-    elif page == "Business Query Engine":
+    elif page == "AI Assistant" or page == "Business Query Engine":
         from src.ui.query_engine import show_query_engine
         show_query_engine(df)
 
