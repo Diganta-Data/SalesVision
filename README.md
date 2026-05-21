@@ -1,29 +1,29 @@
 # SalesVision Enterprise – AI-Powered Retail Sales Analytics Platform
 
-SalesVision is a professional-grade retail analytics platform built with Streamlit and Python. It provides businesses with actionable insights into their sales performance, customer behavior, and future demand through advanced data visualization and machine learning models.
+SalesVision is a professional-grade corporate analytics platform built with Streamlit and Python. It provides executives and analysts with actionable insights into global sales performance, customer cohorts, and future demand through advanced interactive visualizations, scikit-learn clustering models, and Prophet forecasting.
 
-## 🚀 Features
+## 🚀 Key Modules & Capabilities
 
-- **Executive Dashboard**: High-level KPIs (Total Sales, Profit, Margin) with interactive trend charts.
-- **Product Analytics**: Deep dive into category performance and top-selling products.
-- **Customer Insights**: RFM (Recency, Frequency, Monetary) analysis and K-Means clustering for customer segmentation.
-- **Sales Forecasting**: AI-powered demand forecasting using Facebook Prophet.
-- **Interactive UI**: Premium glassmorphism design with responsive components.
-- **SQL Integration**: Persistent data storage using SQLite.
+- **Executive Intelligence**: High-level KPIs (Gross Revenue, Net Profit, Operating Margin, Order Volume) with dynamic area timeline charts and regional share analysis.
+- **Universal CSV Schema Mapper**: Drag-and-drop column aligning system to analyze *any* transactional CSV dataset instantly with custom column matching.
+- **Product Strategy & Matrix**: Treemap category hierarchy, Profitability Quadrant positioning matrix, and dynamic Target Margin threshold tracking.
+- **Customer Cohort Segmentation**: Dynamic K-Means clustering configuration on RFM (Recency, Frequency, Monetary) vectors with interactive Elbow Curve mathematical solver.
+- **Predictive Demand Forecasting**: Dynamic daily, weekly, or monthly Prophet model projections with trend breaks, seasonality components, and dynamic operational supply chain Safety Stock / Reorder Point (ROP) guidelines.
+- **Business Query NLP Engine**: Secure, offline rule-based natural language processing bar that executes business queries instantly into data and visualizations.
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack & Requirements
 
-- **Frontend**: Streamlit
-- **Data Processing**: Pandas, NumPy, SQL Alchemy
-- **Visualization**: Plotly, Seaborn
-- **Machine Learning**: Scikit-learn, Prophet, Statsmodels
-- **Database**: SQLite
+- **Framework**: Streamlit (Advanced Custom Glassmorphism Theme)
+- **Data Engineering**: Pandas, NumPy, SQLAlchemy
+- **Interactive Visuals**: Plotly Express & Plotly Graph Objects
+- **Algorithms**: Scikit-Learn (K-Means, StandardScaler), Facebook Prophet (Time Series Forecasting)
+- **Data Engine**: SQLite (Local persistent database storage)
 
-## 📦 Installation & Setup
+## 📦 Deployment & Setup
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Diganta-Data/SalesVision.git
    cd SalesVision
    ```
 
@@ -32,22 +32,27 @@ SalesVision is a professional-grade retail analytics platform built with Streaml
    pip install -r requirements.txt
    ```
 
-3. **Run the application**:
+3. **Run the application locally**:
    ```bash
-   streamlit run src/app.py
+   streamlit run app.py
    ```
 
-## 📂 Project Structure
+## 📂 Architecture
 
 ```text
 SalesVision/
-├── data/               # SQLite database and raw data
+├── assets/
+│   └── style.css            # Custom Glassmorphism Style Tokens
+├── data/
+│   └── sales_vision.db      # Local SQLite database
 ├── src/
-│   ├── app.py          # Main entry point
-│   ├── data_manager.py # Data ingestion & cleaning
-│   ├── models.py       # ML model implementations
-│   ├── styles.css      # Custom UI styling
-│   └── pages/          # Dashboard sub-pages
-├── requirements.txt    # Dependency list
-└── README.md           # Documentation
+│   ├── ui/
+│   │   ├── customer_analytics.py
+│   │   ├── forecasting.py
+│   │   ├── product_analytics.py
+│   │   └── query_engine.py  # NLP Business Query Engine
+│   ├── data_manager.py      # Database initialization & loading
+│   └── models.py            # K-Means & Prophet prediction algorithms
+├── app.py                   # Platform Core Router & Universal Mapper
+└── requirements.txt         # Package dependencies list
 ```
